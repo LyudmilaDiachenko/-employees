@@ -6,10 +6,11 @@ const EmployeesList = ({data, onDelete}) => {
         const {id, ...itemProps} = item;
         return(
             <EmployeesListItem 
-            key={id} 
-            {...itemProps}
-            onDelete={() => onDelete(id)}
+                key={id} 
+                {...itemProps}
+                onDelete={() => onDelete(id)}
             />
+            
             // або <EmployeesListItem name={item.name} salary={item.salary} />
         );
     })
