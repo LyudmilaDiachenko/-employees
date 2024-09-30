@@ -49,7 +49,14 @@ class App extends Component{
     }
 
     onToogleStar = (id) => {
-        console.log(`star ${id}`);
+        this.setState({
+            data: this.state.data.map(i => {
+                if(i.id === id){
+                    return {...i, star: !i.star}
+                }
+                return i;
+            })
+        })      
     }
 
     render(){
