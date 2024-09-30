@@ -29,6 +29,8 @@ class EmployeesAddForm extends Component{
                         name="name" 
                         value={this.state.name}
                         onChange={this.onValueChange}
+                        required
+                        minlength="3"
                     />
                     <input type="number"
                         className="form-control new-post-label"
@@ -36,6 +38,7 @@ class EmployeesAddForm extends Component{
                         name="salary" 
                         value={this.state.salary}
                         onChange={this.onValueChange}
+                        required
                     />
                     <input type="submit" className="btn btn-outline-light" value="Додати" />
                 </form>
