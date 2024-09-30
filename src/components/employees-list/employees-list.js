@@ -1,6 +1,6 @@
 import EmployeesListItem from "../employees-list-item/employees-list-item"
 
-const EmployeesList = ({data, onDelete}) => {
+const EmployeesList = ({data, onDelete, onToogleIncrease, onToogleStar}) => {
 
     const elements = data.map(item => {
         const {id, ...itemProps} = item;
@@ -9,16 +9,16 @@ const EmployeesList = ({data, onDelete}) => {
                 key={id} 
                 {...itemProps}
                 onDelete={() => onDelete(id)}
-            />
-            
-            // або <EmployeesListItem name={item.name} salary={item.salary} />
-        );
+                onToogleIncrease={() => onToogleIncrease(id)}
+                onToogleStar={() => onToogleStar(id)}
+                />
+            );            
     })
 
     return(
         <ul className="app-list list-group">
             {elements}
-        </ul>
+        </ul>        
     );
 }
 
