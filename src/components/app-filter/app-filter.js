@@ -1,23 +1,32 @@
 import "./app-filter.css";
 
-const AppFilter = () => {
+const AppFilter = ({salaryFilter, setSalaryFilter, increase, setIncreaseFilter}) => {
     return(
         <div className="btn-group">
-            <button 
-                className="btn btn-light"
-                type="button">
-                Усі працівники
-            </button>
-            <button 
-                className="btn btn-outline-light"
-                type="button">
-                На підвищення
-            </button>
-            <button 
-                className="btn btn-outline-light"
-                type="button">
-                З/П більше $1000
-            </button>
+            <label className={`btn ${!salaryFilter && !setIncreaseFilter ? "btn-light" : "btn-outline-light"}`}>
+                <input className="opacity-input"
+                    type="radio"
+                    name="filter"
+                    onChange={() => [setSalaryFilter(false), setIncreaseFilter(false)]}
+                />
+                    Усі працівники
+            </label>
+            <label className={`btn ${increase ? "btn-light" : "btn-outline-light"}`}>
+                <input className="opacity-input"
+                    type="radio"
+                    name="filter"
+                    onChange={() => [setSalaryFilter(false), setIncreaseFilter(true)]}
+                />
+                    На підвищення
+            </label>
+            <label className={`btn ${salaryFilter ? "btn-light" : "btn-outline-light"}`}>
+                <input className="opacity-input"
+                    type="radio"
+                    name="filter"
+                    onChange={() => [setSalaryFilter(true), setIncreaseFilter(false)]}
+                />
+                    З/П більше $1000
+            </label>
         </div>
     );
 }
