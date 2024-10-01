@@ -30,7 +30,7 @@ class EmployeesAddForm extends Component{
                         value={this.state.name}
                         onChange={this.onValueChange}
                         required
-                        minlength="3"
+                        minLength="3"
                     />
                     <input type="number"
                         className="form-control new-post-label"
