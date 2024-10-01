@@ -2,3 +2,7 @@
 .btn-group{
     margin-top: 20px;
 }
+
+.opacity-input{
+    opacity: 0;
+}
